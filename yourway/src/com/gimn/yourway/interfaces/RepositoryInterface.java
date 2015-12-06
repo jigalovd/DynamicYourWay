@@ -2,11 +2,13 @@ package com.gimn.yourway.interfaces;
 
 import java.util.List;
 
+import com.gimn.yourway.dao.Country;
 import com.gimn.yourway.dao.Person;
 import com.gimn.yourway.dao.PersonData;
 
 public interface RepositoryInterface {
 	
+	/*Person methods
 	public void addPerson(Person person);
 	
 	public List<Person> listPersons();
@@ -20,6 +22,14 @@ public interface RepositoryInterface {
 	public void removePersonDataByID(Integer id);
 	
 	public void removePersonDataByPerson(Person person);
+	*/
+	/*Country methods*/
+	public void addCountry(Country country);
+	
+	public Iterable<Country> getAllCountries();
+	
+	public Country getCountry(String countryName);
+	
 	
 
 }
