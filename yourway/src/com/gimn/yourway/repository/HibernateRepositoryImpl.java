@@ -23,7 +23,7 @@ public class HibernateRepositoryImpl implements RepositoryInterface{
 	public void addCountry(Country country) {
 		Country c = getCountryById(country.getId());
 		if(c==null)
-			em.persist(c);
+			em.persist(country);
 	}
 		private Country getCountryById(int id){
 			Country c = em.find(Country.class, id);

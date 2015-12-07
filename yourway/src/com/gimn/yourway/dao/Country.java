@@ -1,5 +1,6 @@
 package com.gimn.yourway.dao;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -8,7 +9,12 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Country {
+public class Country implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6521660722313463092L;
+
 	@Id
 	@GeneratedValue
 	private int id;
@@ -72,6 +78,9 @@ public class Country {
 		return id;
 	} 
 	
+	public Country() {
+		// TODO Auto-generated constructor stub
+	}
 	
 
 }
