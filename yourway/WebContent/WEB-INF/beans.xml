@@ -21,4 +21,5 @@ class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcesso
     <property name="entityManagerFactory" ref="emf"/>
 </bean>
 <bean id="repository" class="com.gimn.yourway.repository.HibernateRepositoryImpl" />
+
   </beans>

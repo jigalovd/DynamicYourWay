@@ -3,6 +3,7 @@ package com.gimn.yourway.interfaces;
 import java.util.List;
 
 import com.gimn.yourway.dao.Country;
+import com.gimn.yourway.dao.Form;
 import com.gimn.yourway.dao.Person;
 import com.gimn.yourway.dao.PersonData;
 
@@ -29,6 +30,14 @@ public interface RepositoryInterface {
 	public Iterable<Country> getAllCountries();
 	
 	public Country getCountry(String countryName);
+	
+	/*Form methods*/
+	
+	public void addForm(Form form);
+	
+	public Form getForm(String formName);
+	
+	public Iterable<Form> getAllForms();
 	
 	
 

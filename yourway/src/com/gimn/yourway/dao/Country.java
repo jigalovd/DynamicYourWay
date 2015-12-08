@@ -1,6 +1,7 @@
 package com.gimn.yourway.dao;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -8,13 +9,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @Entity
 public class Country implements Serializable{
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -6521660722313463092L;
-
+	
+	
+	
+	
 	@Id
 	@GeneratedValue
 	private int id;
@@ -78,9 +84,22 @@ public class Country implements Serializable{
 		return id;
 	} 
 	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Country [id=" + id + ", name=" + name + "]";
+	}
+
 	public Country() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	
+	
+	
+	
 	
 
 }

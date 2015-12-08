@@ -9,6 +9,7 @@ import javax.persistence.Query;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.gimn.yourway.dao.Country;
+import com.gimn.yourway.dao.Form;
 import com.gimn.yourway.dao.Person;
 import com.gimn.yourway.dao.PersonData;
 import com.gimn.yourway.interfaces.RepositoryInterface;
@@ -41,6 +42,32 @@ public class HibernateRepositoryImpl implements RepositoryInterface{
 		Query query = em.createQuery("SELECT c FROM Country c WHERE c.name = '"+countryName+"'");
 		Country c = (Country)query.getSingleResult();
 		return c;
+	}
+	
+	@Transactional(readOnly=false)
+	public void addForm(Form form) {
+		Form f = getFormById(form.getId());
+		if(f == null)
+			em.persist(form);
+		
+	}
+	
+		private Form getFormById(int id){
+			Form f = em.find(Form.class, id);
+			return f;
+		}
+	
+	public Form getForm(String formName) {
+		Query query = em.createQuery("SELECT f FROM Form f WHERE f.name = '"+ formName +"'");
+		Form f = (Form)query.getSingleResult();
+		return f;
+	}
+	
+	public Iterable<Form> getAllForms() {
+		List<Form> res = null;
+		Query q = em.createQuery("SELECT f FROM Form f");
+		res = q.getResultList();
+		return res;
 	}
 		
 	
