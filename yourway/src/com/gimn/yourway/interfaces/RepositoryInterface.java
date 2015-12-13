@@ -3,10 +3,9 @@ package com.gimn.yourway.interfaces;
 import java.util.List;
 
 import com.gimn.yourway.dao.Country;
-<<<<<<< HEAD
+
 import com.gimn.yourway.dao.Form;
-=======
->>>>>>> branch 'master' of https://github.com/jigalovd/DynamicYourWay.git
+
 import com.gimn.yourway.dao.Person;
 import com.gimn.yourway.dao.PersonData;
 
@@ -34,7 +33,7 @@ public interface RepositoryInterface {
 	
 	public Country getCountry(String countryName);
 	
-<<<<<<< HEAD
+
 	/*Form methods*/
 	
 	public void addForm(Form form);
@@ -43,8 +42,7 @@ public interface RepositoryInterface {
 	
 	public Iterable<Form> getAllForms();
 	
-=======
->>>>>>> branch 'master' of https://github.com/jigalovd/DynamicYourWay.git
+
 	
 
 }
