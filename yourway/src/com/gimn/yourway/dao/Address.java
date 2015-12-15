@@ -25,6 +25,8 @@ public class Address {
 	
 	@OneToMany
 	private List<Country> countries;
+	
+	public Address(){}
 
 	/**
 	 * @return the street

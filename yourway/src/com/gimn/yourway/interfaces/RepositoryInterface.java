@@ -3,9 +3,8 @@ package com.gimn.yourway.interfaces;
 import java.util.List;
 
 import com.gimn.yourway.dao.Country;
-
-import com.gimn.yourway.dao.Form;
-
+import com.gimn.yourway.dao.Document;
+import com.gimn.yourway.dao.DocumentImage;
 import com.gimn.yourway.dao.Person;
 import com.gimn.yourway.dao.PersonData;
 
@@ -26,6 +25,7 @@ public interface RepositoryInterface {
 	
 	public void removePersonDataByPerson(Person person);
 	*/
+	
 	/*Country methods*/
 	public void addCountry(Country country);
 	
@@ -34,15 +34,25 @@ public interface RepositoryInterface {
 	public Country getCountry(String countryName);
 	
 
-	/*Form methods*/
 	
-	public void addForm(Form form);
+	/*Document methods*/
+	public void addDocument(Document document);
 	
-	public Form getForm(String formName);
+	public Document getDocument(String documentName);
 	
-	public Iterable<Form> getAllForms();
+	public Iterable<Document> getAllDocuments();
 	
-
+	/*Save DocumentImage instance to DB*/
+	public void saveDocumentImage(DocumentImage image);
 	
-
+	/*Image upload for Document class*/
+	public DocumentImage getDocumentImgByName(String imgName);
+	
+	public Iterable<Document> getRelatedDocumentsByImg(DocumentImage docImg);
+	
+	
+	
+	
+	
+	
 }

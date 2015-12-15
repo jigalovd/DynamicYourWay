@@ -15,6 +15,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class PersonData {
@@ -25,21 +27,16 @@ public class PersonData {
 	@GeneratedValue
 	private int id;
 	
-	
 	private String identity;
 	
-	
+	@Temporal(value = TemporalType.DATE)
 	private Date birthDate;
-	
 	
 	private String firstName;
 	
-	
 	private String lastName;
 	
-	
 	private char gender;
-	
 	
 	private String familyStatus;
 	

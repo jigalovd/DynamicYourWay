@@ -22,4 +22,10 @@ class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcesso
 </bean>
 <bean id="repository" class="com.gimn.yourway.repository.HibernateRepositoryImpl" />
 
+<!-- CommonsMultipartResolver – реализует интерфейс MultipartResolver, 
+	который использует библиотеку Apache для загрузки файлов через форму. 
+	Для использования CommonsMultipartResolver будут необходимы библиотеки commons-io.jar и commons-fileupload.jar -->
+<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	<property name="maxUploadSize" value="200000"/>
+</bean>
   </beans>

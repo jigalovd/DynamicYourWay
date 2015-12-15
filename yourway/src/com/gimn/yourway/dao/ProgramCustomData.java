@@ -11,6 +11,8 @@ public class ProgramCustomData {
 	private int id;
 	
 	private String value;
+	
+	public ProgramCustomData(){}
 
 	public String getValue() {
 		return value;

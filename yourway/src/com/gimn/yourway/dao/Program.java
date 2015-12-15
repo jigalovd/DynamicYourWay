@@ -1,8 +1,11 @@
 package com.gimn.yourway.dao;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -19,9 +22,11 @@ public class Program {
 	
 	private String description;
 	
-	@OneToOne
-	private Requirements requirements;
-
+	@OneToMany
+	private List<ProgramCustomData> customData;
+	
+	public Program(){}
+	
 	public String getName() {
 		return name;
 	}
@@ -54,14 +59,7 @@ public class Program {
 		this.description = description;
 	}
 
-	public Requirements getRequirements() {
-		return requirements;
-	}
-
-	public void setRequirements(Requirements requirements) {
-		this.requirements = requirements;
-	}
-
+	
 	public int getId() {
 		return id;
 	}

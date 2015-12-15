@@ -9,7 +9,8 @@ import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import com.gimn.yourway.dao.Country;
-import com.gimn.yourway.dao.Form;
+import com.gimn.yourway.dao.Document;
+import com.gimn.yourway.dao.DocumentImage;
 import com.gimn.yourway.interfaces.RepositoryInterface;
 
 public class TestingApp {
@@ -26,15 +27,11 @@ public class TestingApp {
 	public static void main(String[] args) {
 		AbstractApplicationContext context = new FileSystemXmlApplicationContext("/WebContent/WEB-INF/beans.xml");
 		RepositoryInterface repository = (RepositoryInterface) context.getBean("repository");
-		Country c1 = new Country();
-		c1.setName("Germany");
-		repository.addCountry(c1);
-		Form f1 = new Form();
-		f1.setFile("filepath");
-		f1.setName("formName");
-		f1.setCountry(c1);
-		
-		repository.addForm(f1);
+		DocumentImage img = repository.getDocumentImgByName("img1");
+		Document doc = repository.getDocument("doc1");
+		System.out.println(img.getImageName());
+		System.out.println(doc.getName());
+		//repository.saveDocumentImage(dImg);
 		
 		
 		
