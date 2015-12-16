@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.portlet.ModelAndView;
 
 import com.gimn.yourway.dao.Country;
 import com.gimn.yourway.interfaces.RepositoryInterface;
@@ -29,7 +30,11 @@ public class MainController {
 	@Autowired
 	RepositoryInterface repository;
 	
-	
+	@RequestMapping(value="/",method=RequestMethod.GET)
+	public String index(){
+		
+		return "index";
+	}
 	@RequestMapping( value="rest/countries",method=RequestMethod.GET)
 	public @ResponseBody List<Map> getCountries(){
 		List<Map> res = new LinkedList<Map>();
