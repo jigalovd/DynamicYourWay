@@ -9,8 +9,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.HttpRequestHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,13 +24,13 @@ import com.gimn.yourway.dao.Country;
 import com.gimn.yourway.interfaces.RepositoryInterface;
 
 @Controller
-@RequestMapping(value="rest")
 public class MainController {
 	
 	@Autowired
 	RepositoryInterface repository;
 	
-	@RequestMapping( value="countries",method=RequestMethod.GET)
+	
+	@RequestMapping( value="rest/countries",method=RequestMethod.GET)
 	public @ResponseBody List<Map> getCountries(){
 		List<Map> res = new LinkedList<Map>();
 		Iterable<Country> countryList = repository.getAllCountries();

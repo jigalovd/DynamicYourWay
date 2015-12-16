@@ -11,9 +11,7 @@
      class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
   <property name="persistenceUnitName" value="yourwayDB" />
 </bean>
-<bean 
-class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" 
-/>
+<bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
 
 
 <tx:annotation-driven transaction-manager="transactionManager"/>
@@ -21,6 +19,8 @@ class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcesso
     <property name="entityManagerFactory" ref="emf"/>
 </bean>
 <bean id="repository" class="com.gimn.yourway.repository.HibernateRepositoryImpl" />
+
+
 
 <!-- CommonsMultipartResolver – реализует интерфейс MultipartResolver, 
 	который использует библиотеку Apache для загрузки файлов через форму. 

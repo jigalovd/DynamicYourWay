@@ -1,6 +1,6 @@
 var formApp = angular.module("formApp",[]);
 
-formApp.controller("formCtrl", ['$scope', '$http', function($scope, $http) {
+formApp.controller("formCtrl", function($scope, $http) {
 	
 	
 	$scope.addRowAsyncAsJSON = function(){		
@@ -25,4 +25,4 @@ formApp.controller("formCtrl", ['$scope', '$http', function($scope, $http) {
 		$scope.employees='';
 		$scope.headoffice='';
 	};
-}]);
+});
