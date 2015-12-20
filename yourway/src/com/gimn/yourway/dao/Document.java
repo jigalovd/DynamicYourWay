@@ -1,5 +1,6 @@
 package com.gimn.yourway.dao;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -12,7 +13,13 @@ import javax.persistence.OneToOne;
 import org.apache.openjpa.persistence.jdbc.Unique;
 
 @Entity
-public class Document {
+public class Document implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4667520718518308778L;
+
+
 	@Id
 	@GeneratedValue
 	private int id;

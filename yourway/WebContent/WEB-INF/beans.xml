@@ -26,7 +26,7 @@
 	который использует библиотеку Apache для загрузки файлов через форму. 
 	Для использования CommonsMultipartResolver будут необходимы библиотеки commons-io.jar и commons-fileupload.jar -->
 <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-	<property name="maxUploadSize" value="200000"/>
+	<property name="maxUploadSize" value="300000"/>
 </bean>
 
 

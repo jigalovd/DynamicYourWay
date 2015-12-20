@@ -67,7 +67,7 @@ public class DocumentImage  implements Serializable{
 	/**
 	 * @return the relatedDocuments
 	 */
-	public List<Document> getRelatedDocuments() {
+	public Iterable<Document> getRelatedDocuments() {
 		return relatedDocuments;
 	}
 
